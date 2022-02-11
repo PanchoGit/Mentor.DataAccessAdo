@@ -1,11 +1,11 @@
 ﻿namespace DataAccessAdo.Dtos
 {
-    public class SkaterDto
+    public record SkaterDto
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
 
-        public string Name { get; set; }
+        public string Name { get; init; }
 
-        public string Brand { get; set; }
+        public string Brand { get; init; }
     }
 }
