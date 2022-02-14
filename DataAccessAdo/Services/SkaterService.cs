@@ -7,7 +7,7 @@ namespace DataAccessAdo.Services
     public class SkaterService
     {
         private readonly SkaterRepository repository;
-        public readonly IMapper mapper;
+        private readonly IMapper mapper;
 
         public SkaterService(IMapper mapper)
         {

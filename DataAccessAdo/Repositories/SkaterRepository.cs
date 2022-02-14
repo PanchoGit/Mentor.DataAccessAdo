@@ -6,13 +6,13 @@ namespace DataAccessAdo.Repositories
     {
         public IEnumerable<Skater> GetAll() {
             return new List<Skater>() {
-                new Skater
+                new()
                 {
                     Id = 1,
                     Name = "Paul Rodriguez",
                     Brand = "Primitive"
                 },
-                new Skater
+                new()
                 {
                     Id = 2,
                     Name = "Tony Hawk",
