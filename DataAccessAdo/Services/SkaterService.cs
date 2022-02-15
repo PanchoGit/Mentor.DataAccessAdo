@@ -4,15 +4,15 @@ using DataAccessAdo.Repositories;
 
 namespace DataAccessAdo.Services
 {
-    public class SkaterService
+    public class SkaterService : ISkaterService
     {
-        private readonly SkaterRepository repository;
+        private readonly ISkaterRepository repository;
         private readonly IMapper mapper;
 
-        public SkaterService(IMapper mapper)
+        public SkaterService(IMapper mapper, ISkaterRepository repository)
         {
             this.mapper = mapper;
-            repository = new SkaterRepository();
+            this.repository = repository;
         }
 
         public IEnumerable<SkaterDto> GetAll()

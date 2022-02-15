@@ -2,7 +2,7 @@
 
 namespace DataAccessAdo.Repositories
 {
-    public class SkaterRepository
+    public class SkaterRepository : ISkaterRepository
     {
         public IEnumerable<Skater> GetAll() {
             return new List<Skater>() {

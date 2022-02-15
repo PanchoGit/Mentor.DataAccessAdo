@@ -1,7 +1,6 @@
-﻿using AutoMapper;
+﻿using Microsoft.AspNetCore.Mvc;
 using DataAccessAdo.Dtos;
 using DataAccessAdo.Services;
-using Microsoft.AspNetCore.Mvc;
 
 namespace DataAccessAdo.Controllers
 {
@@ -9,11 +8,11 @@ namespace DataAccessAdo.Controllers
     [ApiController]
     public class SkatersController : ControllerBase
     {
-        private readonly SkaterService service;
+        private readonly ISkaterService service;
 
-        public SkatersController(IMapper mapper)
+        public SkatersController(ISkaterService skaterService)
         {
-            service = new SkaterService(mapper);
+            service = skaterService;
         }
 
         [HttpGet]
