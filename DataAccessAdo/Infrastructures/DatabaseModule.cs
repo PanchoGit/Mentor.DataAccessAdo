@@ -17,7 +17,7 @@ namespace DataAccessAdo.Infrastructures
         {
             var connectionString = configurationManager["ConnectionStrings:Default"];
 
-            builder.Register<IDbConnection>(c => new MySqlConnection(connectionString))
+            builder.Register<MySqlConnection>(c => new MySqlConnection(connectionString))
                 .InstancePerLifetimeScope();
         }
     }
