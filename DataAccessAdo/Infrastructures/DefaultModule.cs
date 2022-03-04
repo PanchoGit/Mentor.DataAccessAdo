@@ -7,7 +7,6 @@ namespace DataAccessAdo.Infrastructures
     public class DefaultModule : Module
     {
         private const string RepositoryAssemblyEndName = "Repository";
-        private const string ServiceAssemblyEndName = "Service";
 
         protected override void Load(ContainerBuilder builder)
         {
@@ -15,10 +14,6 @@ namespace DataAccessAdo.Infrastructures
 
             builder.RegisterAssemblyTypes(assemblies)
                 .Where(s => s.Name.EndsWith(RepositoryAssemblyEndName))
-                .AsImplementedInterfaces();
-
-            builder.RegisterAssemblyTypes(assemblies)
-                .Where(s => s.Name.EndsWith(ServiceAssemblyEndName))
                 .AsImplementedInterfaces();
         }
     }

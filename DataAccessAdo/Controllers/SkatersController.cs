@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DataAccessAdo.Dtos;
-using DataAccessAdo.Services;
+using MediatR;
+using DataAccessAdo.Services.Queries;
 
 namespace DataAccessAdo.Controllers
 {
@@ -8,17 +8,17 @@ namespace DataAccessAdo.Controllers
     [ApiController]
     public class SkatersController : ControllerBase
     {
-        private readonly ISkaterService service;
+        private readonly IMediator mediator;
 
-        public SkatersController(ISkaterService skaterService)
+        public SkatersController(IMediator mediator)
         {
-            service = skaterService;
+            this.mediator = mediator;
         }
 
         [HttpGet]
-        public IEnumerable<SkaterDto> Get()
+        public async Task<IActionResult> Get()
         {
-            return service.GetAll();
+            return Ok(await mediator.Send(new SkaterQuery()));
         }
     }
 }
